@@ -33,7 +33,7 @@ object RetrofitTiebaApi {
             Param.CLIENT_ID to { clientId },
             Param.CLIENT_TYPE to { "2" },
             Param.OS_VERSION to { Build.VERSION.SDK_INT.toString() },
-            Param.MODEL to { Build.MODEL },
+            Param.MODEL to { Build.UNKNOWN },
             Param.NET_TYPE to { "1" },
             Param.PHONE_IMEI to { MobileInfoUtil.getIMEI(BaseApplication.instance) },
             Param.TIMESTAMP to { System.currentTimeMillis().toString() }

@@ -12,8 +12,9 @@ import java.util.UUID;
 public class UIDUtil {
     @SuppressLint("HardwareIds")
     public static String getAndroidId() {
-        String androidId = Settings.Secure.getString(BaseApplication.getInstance().getContentResolver(), Settings.Secure.ANDROID_ID);
-        return androidId == null ? "" : androidId;
+//        String androidId = Settings.Secure.getString(BaseApplication.getInstance().getContentResolver(), Settings.Secure.ANDROID_ID);
+//        return androidId == null ? "" : androidId;
+        return "";
     }
 
     public static String getNewCUID() {

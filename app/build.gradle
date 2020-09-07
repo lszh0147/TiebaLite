@@ -16,8 +16,7 @@ buildscript {
     }
 }
 
-def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(rootProject.file("keystore.properties")))
+
 def applicationProperties = new Properties()
 applicationProperties.load(new FileInputStream(rootProject.file("application.properties")))
 def SHA1 = System.getenv("CIRCLE_SHA1")
@@ -60,13 +59,15 @@ andResGuard {
 android {
     signingConfigs {
         release {
-            keyAlias keystoreProperties['releaseKeyAlias']
-            keyPassword keystoreProperties['releaseKeyPassword']
-            storeFile file(rootDir.getCanonicalPath() + '/' + keystoreProperties['releaseKeyStore'])
-            storePassword keystoreProperties['releaseStorePassword']
-            v2SigningEnabled true
+            storeFile file("TestKey.jks")
+            storePassword "123321"
+            keyAlias "Test"
+            keyPassword "123321"
         }
+
     }
+
+
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.huanchengfly.tieba.post"
@@ -155,7 +156,7 @@ dependencies {
     implementation 'com.zhihu.android:matisse:0.5.3-beta3'
     implementation 'com.yanzhenjie:permission:2.0.3'
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0-beta02'
-    api 'com.flurry.android:analytics:12.2.0'
+//    api 'com.flurry.android:analytics:12.2.0'
     implementation 'androidx.palette:palette:1.0.0'
 
     implementation 'com.github.yalantis:ucrop:2.2.4'

@@ -17,7 +17,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
-import com.flurry.android.FlurryAgent
+//import com.flurry.android.FlurryAgent
 import com.huanchengfly.tieba.post.api.interfaces.CommonCallback
 import com.huanchengfly.tieba.post.ui.theme.interfaces.ThemeSwitcher
 import com.huanchengfly.tieba.post.ui.theme.utils.ThemeUtils
@@ -41,9 +41,9 @@ class BaseApplication : Application() {
         ThemeUtils.init(ThemeDelegate)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         LitePal.initialize(this)
-        FlurryAgent.Builder()
-                .withCaptureUncaughtExceptions(true)
-                .build(this, "ZMRX6W76WNF95ZHT857X")
+//        FlurryAgent.Builder()
+//                .withCaptureUncaughtExceptions(true)
+//                .build(this, "ZMRX6W76WNF95ZHT857X")
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
             private var clipBoardHash: String? = null
             private fun updateClipBoardHashCode() {

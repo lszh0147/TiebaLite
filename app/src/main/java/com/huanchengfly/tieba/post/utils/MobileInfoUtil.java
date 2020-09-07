@@ -10,23 +10,24 @@ public class MobileInfoUtil {
 
     @SuppressLint("HardwareIds")
     public static String getIMEI(Context context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            return DEFAULT_IMEI;
-        }
-        try {
-            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-            String imei = null;
-            if (telephonyManager != null) {
-                imei = telephonyManager.getDeviceId();
-            }
-            if (imei == null) {
-                imei = DEFAULT_IMEI;
-            }
-            return imei;
-        } catch (SecurityException e) {
-            return DEFAULT_IMEI;
-        } catch (Exception e) {
-            return DEFAULT_IMEI;
-        }
+        return DEFAULT_IMEI;
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+//            return DEFAULT_IMEI;
+//        }
+//        try {
+//            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+//            String imei = null;
+//            if (telephonyManager != null) {
+//                imei = telephonyManager.getDeviceId();
+//            }
+//            if (imei == null) {
+//                imei = DEFAULT_IMEI;
+//            }
+//            return imei;
+//        } catch (SecurityException e) {
+//            return DEFAULT_IMEI;
+//        } catch (Exception e) {
+//            return DEFAULT_IMEI;
+//        }
     }
 }
