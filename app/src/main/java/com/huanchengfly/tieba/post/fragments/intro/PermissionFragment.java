@@ -58,7 +58,7 @@ public class PermissionFragment extends BaseIntroFragment {
     public boolean onNext() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
             PermissionUtil.askPermission(getAttachContext(), data -> next(),
-                    new PermissionUtil.Permission(Permission.READ_PHONE_STATE, getString(R.string.tip_permission_phone)),
+//                    new PermissionUtil.Permission(Permission.READ_PHONE_STATE, getString(R.string.tip_permission_phone)),
                     new PermissionUtil.Permission(Permission.Group.STORAGE, getString(R.string.tip_permission_storage)));
             return true;
         }
